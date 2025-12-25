@@ -13,20 +13,29 @@ export const UserCard: React.FC<Props> = ({
   return (
     <div className="page">
       <div className="card">
-        <div className="card__avatar">
-          <img src={avatarUrl} alt={`${name}'s avatar`} />
-        </div>
+        <img
+          className="card__avatar"
+          src={avatarUrl}
+          alt={`${name}'s avatar`}
+        />
         <span className="card__name">
-          <h2>{name}ф</h2>
+          <h2>{name}</h2>
         </span>
         <div className="card__info">
-          <p>Gender: {gender}</p>
-          <p>
-            Location: {city}, {country}
-          </p>
-          <p>Email: {email}</p>
+          <div className="card__gender">
+            <span>Gender:</span>
+            <span>{gender}</span>
+          </div>
+          <div className="card__location">
+            <span>Location:</span>
+            <span>{city}, {country}</span>
+          </div>
+          <div className="card__email">
+            <span>Email:</span>
+            <span>{email}</span>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
   );
 };

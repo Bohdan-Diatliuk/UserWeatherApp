@@ -2,19 +2,49 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-    
+    font-family: 'Montserrat', sans-serif;
+
     .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         border: 1px solid #ccc;
         border-radius: 8px;
-        padding: 16px;
-        max-width: 200px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: aqua;
+        padding: 20px;
+        max-width: auto;
+        // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: rgb(224, 227, 227);
     
+        &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &__avatar {
+            border-radius: 8px;
+        }
+
         &__name {
-            font-size: 10px;
+            font-size: 16px;
+        }
+
+        &__info {
+            font-size: 15px;
+        }
+
+        &__gender {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__location {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__email {
+            display: flex;
+            justify-content: space-between;
         }
     }
 }
