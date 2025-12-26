@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .card {
     cursor: pointer;
     display: flex;
@@ -92,13 +94,13 @@
 
     &__weather {
         margin-top: auto;
-        background: #0f243bc8;
+        background: $primary-bg-color;
         padding: 15px;
         color: white;
         transition: background 0.3s;
 
         &:hover {
-            background: #37637d;
+            background: $primary-hover-color;
         }
 
         &-block {
