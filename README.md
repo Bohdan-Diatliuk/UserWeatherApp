@@ -4,9 +4,9 @@ A small React application that displays a list of users along with current weath
 
 # Live Demo
 
-Link: [User Weather App]()
+Link: [User Weather App](https://bohdan-diatliuk.github.io/iqua-task/)
 
-# 📌 Features
+# Features
 ## Base Features
 
 - User List Page
@@ -49,7 +49,7 @@ Link: [User Weather App]()
 
 - Works on desktop, tablet, and mobile
 
-# ⚙️ Installation
+# Installation
 
 Clone the repository
 ```
