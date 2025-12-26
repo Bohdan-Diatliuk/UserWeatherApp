@@ -4,7 +4,7 @@ A small React application that displays a list of users along with current weath
 
 # Live Demo
 
-Link: [User Weather]()
+Link: [User Weather App]()
 
 # 📌 Features
 ## Base Features
@@ -37,15 +37,9 @@ Link: [User Weather]()
 
 - Redux Toolkit used to manage user and weather data
 
-- All API data flows through Redux
-
 - TypeScript
 
-- Strong typing for components, state, and API responses
-
 - Error Handling
-
-- Graceful handling of API failures
 
 - Loading States
 
