@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadUsers } from "../../store/usersSlice";
+import { loadUsers, clearUsers } from "../../store/usersSlice";
 import type { RootState, AppDispatch } from "../../store";
 import { UserList } from "../../components/UserList/UserList";
 import "./UserListPage.scss";
@@ -12,6 +12,11 @@ export const UserListPage: React.FC = () => {
   useEffect(() => {
     dispatch(loadUsers());
   }, [dispatch]);
+
+  const handleRefresh = () => {
+    dispatch(clearUsers());
+    dispatch(loadUsers());
+  };
 
   if (loading) {
     return (
@@ -48,6 +53,12 @@ export const UserListPage: React.FC = () => {
         <p className="user-list-page__subtitle">
           Browse through {users.length} users and their weather information
         </p>
+        <button 
+          className="refresh-button"
+          onClick={handleRefresh}
+        >
+          Load New Users
+        </button>
       </header>
 
       <div className="user-list-page__grid">

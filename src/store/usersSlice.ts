@@ -6,6 +6,13 @@ import type { User } from "../types/user";
 export const loadUsers = createAsyncThunk(
   "users/loadUsers",
   async () => {
+    const cachedUsers = localStorage.getItem('users');
+    if (cachedUsers) {
+      console.log('Loading users from localStorage');
+      return JSON.parse(cachedUsers);
+    }
+
+    console.log('Fetching new users from API');
     const users = await fetchUserData();
     
     const usersWithWeather = await Promise.all(
@@ -22,6 +29,8 @@ export const loadUsers = createAsyncThunk(
         }
       })
     );
+    
+    localStorage.setItem('users', JSON.stringify(usersWithWeather));
     
     return usersWithWeather;
   }
@@ -42,7 +51,12 @@ const initialState: UsersState = {
 const usersSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    clearUsers: (state) => {
+      state.users = [];
+      localStorage.removeItem('users');
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadUsers.pending, (state) => {
@@ -60,4 +74,5 @@ const usersSlice = createSlice({
   },
 });
 
+export const { clearUsers } = usersSlice.actions;
 export default usersSlice.reducer;

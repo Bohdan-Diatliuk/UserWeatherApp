@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../store";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "../../store";
+import { loadUsers } from "../../store/usersSlice";
 import { WeatherIcons } from "../../utils/weatherIcons";
 import "./UserDetailsPage.scss";
 import { MoveLeft } from "lucide-react";
@@ -9,17 +10,40 @@ import { MoveLeft } from "lucide-react";
 export const UserDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const user = useSelector((state: RootState) => 
-    state.users.users.find(u => u.id === id)
-  );
+  const dispatch = useDispatch<AppDispatch>();
+  
+  const { users, loading } = useSelector((state: RootState) => state.users);
+  const user = users.find(u => u.id === id);
 
-  if (!user) {
+  useEffect(() => {
+    if (users.length === 0 && !loading) {
+      dispatch(loadUsers());
+    }
+  }, [dispatch, users.length, loading]);
+
+  if (loading) {
+    return (
+      <div className="user-details">
+        <p>Loading user data...</p>
+      </div>
+    );
+  }
+
+  if (!loading && !user && users.length > 0) {
     return (
       <div className="user-details">
         <p>User not found</p>
         <button onClick={() => navigate("/")} className="back-button">
           Back to User List
         </button>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="user-details">
+        <p>Loading...</p>
       </div>
     );
   }
