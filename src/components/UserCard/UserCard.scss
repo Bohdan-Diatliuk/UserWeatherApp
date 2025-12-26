@@ -1,50 +1,130 @@
-.page {
+.card {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 
-    .card {
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    &__avatar {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 20px;
+        flex: 1;
         display: flex;
         flex-direction: column;
-        align-items: center;
+    }
 
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 20px;
-        max-width: auto;
-        // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: rgb(224, 227, 227);
-    
-        &:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    &__name {
+        margin: 0 0 20px 0;
+        font-size: 22px;
+        color: #333;
+        margin: 10px;
+        font-weight: 600;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    &__gender,
+    &__location,
+    &__email {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 10px;
+        
+        span:first-child {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
         }
 
+        span:last-child {
+            font-size: 15px;
+            color: #333;
+            font-weight: 400;
+        }
+    }
+
+    &__email span:last-child {
+        word-break: break-all;
+    }
+
+    &__weather {
+        margin-top: auto;
+        background: #4a90e2;
+        padding: 15px;
+        color: white;
+        transition: background 0.3s;
+
+        &:hover {
+            background: #5568d3;
+        }
+
+        &-block {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            gap: 20px;
+        }
+
+        h3 {
+            font-size: 14px;
+            margin: 0 0 12px 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &-low {
+            display: flex;
+            gap: 4px;
+        }
+
+        &-high {
+            display: flex;
+            gap: 4px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
         &__avatar {
-            border-radius: 8px;
+            height: 200px;
+        }
+
+        &__content {
+            padding: 15px;
         }
 
         &__name {
-            font-size: 16px;
+            font-size: 20px;
         }
 
-        &__info {
-            font-size: 15px;
-        }
-
-        &__gender {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &__location {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        &__email {
-            display: flex;
-            justify-content: space-between;
+        &__weather {
+            padding: 12px;
         }
     }
 }

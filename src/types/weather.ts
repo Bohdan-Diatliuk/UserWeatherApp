@@ -1,13 +1,16 @@
 export interface CurrentWeather {
     temperature: number;
-    weather: number;
+    weatherCode: number;
+    isDay: number;
+    lowTemp: number;
+    highTemp: number;
 };
 
 export interface WeatherForecast {
     date: string;
     lowTemp: number;
     highTemp: number;
-    weather: number;
+    weatherCode: number;
 };
 
 export interface Weather {
