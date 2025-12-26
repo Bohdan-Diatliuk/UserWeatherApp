@@ -1,14 +1,13 @@
 .card {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     background: white;
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
-    color: #000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
 
     &:hover {
         transform: translateY(-8px);
@@ -41,7 +40,27 @@
         flex-direction: column;
         gap: 12px;
         padding-bottom: 20px;
-        margin-left: 10px;
+        margin: 10px;
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            
+            &-first {
+                font-size: 14px;
+                color: #2e2c2c;
+                text-transform: uppercase;
+            }
+
+            &-second {
+                color: #254659;
+                transition: color 0.3s;
+
+                &:hover {
+                    color:#297c7c
+                }
+            }
+        }
     }
 
     &__gender,
@@ -73,13 +92,13 @@
 
     &__weather {
         margin-top: auto;
-        background: #4a90e2;
+        background: #0f243bc8;
         padding: 15px;
         color: white;
         transition: background 0.3s;
 
         &:hover {
-            background: #5568d3;
+            background: #37637d;
         }
 
         &-block {
@@ -89,7 +108,7 @@
             gap: 20px;
         }
 
-        h3 {
+        &-title {
             font-size: 14px;
             margin: 0 0 12px 0;
             font-weight: 600;

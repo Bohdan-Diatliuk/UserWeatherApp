@@ -8,18 +8,17 @@
         text-align: center;
         margin-bottom: 50px;
         padding-bottom: 30px;
-        border-bottom: 2px solid #e0e0e0;
     }
 
     &__title {
         text-transform: uppercase;
         font-size: 48px;
-        color: #2b507b;
+        color: #0f243bc8;
         margin-bottom: 15px;
-        transition: color 0.3s;
-
+        transition: text-shadow 1s, color 0.3s;
         &:hover {
             color: #3c6ea5;
+            text-shadow: 2px 2px 8px #37637d;
         }
     }
 
@@ -31,15 +30,17 @@
 
     &__button {
         text-transform: uppercase;
-        border: 1px solid #3c6ea5;
+        border: 1px solid #0f243bc8;
+        border-radius: 10px;
         color: #fff;
-        background-color: #2b507b;
+        background-color: #0f243bc8;
         padding: 10px;
         font-size: 15px;
-        transition: background-color 0.3s;
-
+        transition: transform 0.8s ease-in-out, background-color 0.3s;
+        
         &:hover {
-            background-color: #346ba9;
+            transform: scaleY(1.1) scaleX(1.1);
+            background-color: #37637d;
         }
     }
 
