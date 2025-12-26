@@ -54,7 +54,7 @@ export const UserListPage: React.FC = () => {
           Browse through {users.length} users and their weather information
         </p>
         <button 
-          className="refresh-button"
+          className="user-list-page__button"
           onClick={handleRefresh}
         >
           Load New Users
