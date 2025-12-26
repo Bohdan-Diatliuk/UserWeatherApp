@@ -1,5 +1,8 @@
 export interface WeatherApiResponse {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    daily: any;
     current_weather: {
+        is_day: number;
         temperature: number;
         weathercode: number;
     };
