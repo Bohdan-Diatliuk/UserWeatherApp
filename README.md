@@ -1,57 +1,55 @@
-🌤 User Weather App
+# 🌤 User Weather App
 
 A small React application that displays a list of users along with current weather information for their location. Users can click on a card to view their own details and the 7-day weather forecast.
 
-📌 Features
-Base Features
+# Live Demo
 
-User List Page
+Link: [User Weather App](https://bohdan-diatliuk.github.io/iqua-task/)
 
-Displays a list of user cards
+# Features
+## Base Features
 
-Each card shows:
+- User List Page
 
-Name, gender, profile image
+- Displays a list of user cards
 
-Location (city, country)
+- Each card shows:
 
-Email
+- Name, gender, profile image
 
-Current weather: icon, temperature, min/max temperatures
+- Location (city, country)
 
-User Detail Page
+- Email
 
-Clicking a card navigates to detail page
+- Current weather: icon, temperature, min/max temperatures
 
-Shows extended user info and 7-day weather forecast
+- User Detail Page
 
-Back navigation to list
+- Clicking a card navigates to detail page
 
-Advanced Features (React/TypeScript)
+- Shows extended user info and 7-day weather forecast
 
-State Management
+- Back navigation to list
 
-Redux Toolkit used to manage user and weather data
+## Advanced Features (React/TypeScript)
 
-All API data flows through Redux
+- State Management
 
-TypeScript
+- Redux Toolkit used to manage user and weather data
 
-Strong typing for components, state, and API responses
+- TypeScript
 
-Error Handling
+- Error Handling
 
-Graceful handling of API failures
+- Loading States
 
-Loading States
+- Displays spinner while fetching data
 
-Displays spinner while fetching data
+## Responsive Design
 
-Responsive Design
+- Works on desktop, tablet, and mobile
 
-Works on desktop, tablet, and mobile
-
-⚙️ Installation
+# Installation
 
 Clone the repository
 ```
