@@ -2,56 +2,60 @@
 
 A small React application that displays a list of users along with current weather information for their location. Users can click on a card to view their own details and the 7-day weather forecast.
 
+# Live Demo
+
+Link: [User Weather]()
+
 # 📌 Features
-Base Features
+## Base Features
 
-User List Page
+- User List Page
 
-Displays a list of user cards
+- Displays a list of user cards
 
-Each card shows:
+- Each card shows:
 
-Name, gender, profile image
+- Name, gender, profile image
 
-Location (city, country)
+- Location (city, country)
 
-Email
+- Email
 
-Current weather: icon, temperature, min/max temperatures
+- Current weather: icon, temperature, min/max temperatures
 
-User Detail Page
+- User Detail Page
 
-Clicking a card navigates to detail page
+- Clicking a card navigates to detail page
 
-Shows extended user info and 7-day weather forecast
+- Shows extended user info and 7-day weather forecast
 
-Back navigation to list
+- Back navigation to list
 
-Advanced Features (React/TypeScript)
+## Advanced Features (React/TypeScript)
 
-State Management
+- State Management
 
-Redux Toolkit used to manage user and weather data
+- Redux Toolkit used to manage user and weather data
 
-All API data flows through Redux
+- All API data flows through Redux
 
-TypeScript
+- TypeScript
 
-Strong typing for components, state, and API responses
+- Strong typing for components, state, and API responses
 
-Error Handling
+- Error Handling
 
-Graceful handling of API failures
+- Graceful handling of API failures
 
-Loading States
+- Loading States
 
-Displays spinner while fetching data
+- Displays spinner while fetching data
 
-Responsive Design
+## Responsive Design
 
-Works on desktop, tablet, and mobile
+- Works on desktop, tablet, and mobile
 
-⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 ```
