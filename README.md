@@ -1,8 +1,8 @@
-🌤 User Weather App
+# 🌤 User Weather App
 
 A small React application that displays a list of users along with current weather information for their location. Users can click on a card to view their own details and the 7-day weather forecast.
 
-📌 Features
+# 📌 Features
 Base Features
 
 User List Page
