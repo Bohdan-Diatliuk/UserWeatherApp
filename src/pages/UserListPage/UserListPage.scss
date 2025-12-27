@@ -1,5 +1,3 @@
-@import '../../styles/variables';
-
 .user-list-page {
     max-width: 1400px;
     margin: 0 auto;
@@ -15,7 +13,7 @@
     &__title {
         text-transform: uppercase;
         font-size: 48px;
-        color: $primary-bg-color;
+        color: #0f243bc8;
         margin-bottom: 15px;
         transition: text-shadow 1s, color 0.3s;
         &:hover {
@@ -32,17 +30,17 @@
 
     &__button {
         text-transform: uppercase;
-        border: 1px solid $primary-bg-color;
+        border: 1px solid #0f243bc8;
         border-radius: 10px;
         color: #fff;
-        background-color: $primary-bg-color;
+        background-color: #0f243bc8;
         padding: 10px;
         font-size: 15px;
         transition: transform 0.8s ease-in-out, background-color 0.3s;
         
         &:hover {
             transform: scaleY(1.1) scaleX(1.1);
-            background-color: $primary-hover-color;
+            background-color: #37637d;
         }
     }
 
