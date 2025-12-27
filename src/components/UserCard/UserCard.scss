@@ -45,16 +45,19 @@
         &-item {
             display: flex;
             justify-content: space-between;
-            
+
             &-first {
                 font-size: 14px;
                 color: #2e2c2c;
                 text-transform: uppercase;
+                flex-shrink: 0;
+                min-width: fit-content;
             }
 
             &-second {
                 color: #254659;
                 transition: color 0.3s;
+                text-align: right;
 
                 &:hover {
                     color:#297c7c

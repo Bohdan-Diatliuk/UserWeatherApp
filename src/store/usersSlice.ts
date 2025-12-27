@@ -8,7 +8,7 @@ export const loadUsers = createAsyncThunk(
   async () => {
     const cachedUsers = localStorage.getItem('users');
     const cacheTimestamp = localStorage.getItem('users_timestamp');
-    const CACHE_DURATION = 30 * 60 * 1000; // 30 хвилин
+    const CACHE_DURATION = 30 * 60 * 1000;
     
     if (cachedUsers && cacheTimestamp) {
       const now = Date.now();
@@ -25,7 +25,6 @@ export const loadUsers = createAsyncThunk(
     console.log('Fetching new users from API');
     const users = await fetchUserData();
     
-    // Послідовне завантаження з затримкою для уникнення rate limiting
     const usersWithWeather: User[] = [];
     
     for (let i = 0; i < users.length; i++) {
@@ -40,13 +39,12 @@ export const loadUsers = createAsyncThunk(
         );
         
         usersWithWeather.push({ ...user, weather: weatherData });
-        console.log(`✓ Weather loaded for ${user.name}`);
+        console.log(`Weather loaded for ${user.name}`);
       } catch (error) {
-        console.error(`✗ Failed to load weather for ${user.name}:`, error);
-        usersWithWeather.push(user); // Додаємо без погоди
+        console.error(`Failed to load weather for ${user.name}:`, error);
+        usersWithWeather.push(user);
       }
       
-      // Затримка між запитами (крім останнього)
       if (i < users.length - 1) {
         await new Promise(resolve => setTimeout(resolve, 300));
       }

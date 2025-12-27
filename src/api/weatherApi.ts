@@ -18,7 +18,7 @@ export const fetchWeatherData = async (
       }
     );
     
-    console.log(`✓ Weather API success for ${latitude}, ${longitude}`);
+    console.log(`Weather API success for ${latitude}, ${longitude}`);
     
     return {
       current: {
@@ -37,14 +37,14 @@ export const fetchWeatherData = async (
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      console.error("❌ Weather API Error:", {
+      console.error("Weather API Error:", {
         message: error.message,
         status: error.response?.status,
         statusText: error.response?.statusText,
         coordinates: { latitude, longitude }
       });
     } else {
-      console.error("❌ Unexpected error:", error);
+      console.error("Unexpected error:", error);
     }
     
     throw error;
