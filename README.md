@@ -53,8 +53,8 @@ Link: [User Weather App](https://bohdan-diatliuk.github.io/iqua-task/)
 
 Clone the repository
 ```
-git clone https://github.com/Bohdan-Diatliuk/iqua-task.git
-cd iqua-task
+git clone https://github.com/Bohdan-Diatliuk/UserWeatherApp.git
+cd UserWeatherApp
 ```
 
 Install dependencies
