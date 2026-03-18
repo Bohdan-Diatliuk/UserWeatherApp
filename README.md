@@ -1,72 +1,47 @@
 # 🌤 User Weather App
+A React application that displays a list of users along with current weather information for their location. Click on any user card to view detailed info and a 7-day weather forecast.
+Live Demo →
 
-A small React application that displays a list of users along with current weather information for their location. Users can click on a card to view their own details and the 7-day weather forecast.
+## Features
 
-# Live Demo
+- User List Page — browse user cards with name, gender, profile photo, location, email, and current weather (icon, temperature, min/max)
 
-Link: [User Weather App](https://bohdan-diatliuk.github.io/iqua-task/)
+- User Detail Page — extended user info with a full 7-day weather forecast
 
-# Features
-## Base Features
+- Caching — user data is cached in localStorage for 30 minutes to reduce API calls
 
-- User List Page
+- Loading States — spinner displayed while fetching data
 
-- Displays a list of user cards
+- Error Handling — graceful fallback when API requests fail
 
-- Each card shows:
+- Responsive Design — works on desktop, tablet, and mobile
 
-- Name, gender, profile image
+## Tech Stack
 
-- Location (city, country)
+- React 19 + TypeScript
 
-- Email
+- Redux Toolkit
 
-- Current weather: icon, temperature, min/max temperatures
+- Vite
 
-- User Detail Page
+- Axios
 
-- Clicking a card navigates to detail page
+- DummyJSON API (users)
 
-- Shows extended user info and 7-day weather forecast
+- Open-Meteo API (weather)
 
-- Back navigation to list
 
-## Advanced Features (React/TypeScript)
+## Installation
 
-- State Management
-
-- Redux Toolkit used to manage user and weather data
-
-- TypeScript
-
-- Error Handling
-
-- Loading States
-
-- Displays spinner while fetching data
-
-## Responsive Design
-
-- Works on desktop, tablet, and mobile
-
-# Installation
-
-Clone the repository
-```
+bash# Clone the repository
 git clone https://github.com/Bohdan-Diatliuk/UserWeatherApp.git
 cd UserWeatherApp
-```
 
-Install dependencies
-```
+### Install dependencies
 npm install
-# or
-yarn
-```
 
-Run the development server
-```
+#### Run the development server
 npm run dev
-# or for CRA
-npm start
-```
+Open http://localhost:5173/UserWeatherApp/ in your browser.
+Available Scripts
+CommandDescriptionnpm run devStart development servernpm run buildBuild for productionnpm run previewPreview production buildnpm run deployDeploy to GitHub Pages
