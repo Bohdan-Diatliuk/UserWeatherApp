@@ -46,5 +46,5 @@ npm install
 ### Run the development server
 ```
 npm run dev
-Open http://localhost:5173/UserWeatherApp/ in your browser.
 ```
+Open http://localhost:5173/UserWeatherApp/ in your browser.

@@ -3,7 +3,8 @@ import type { User } from "../types/user";
 
 export const fetchUserData = async (): Promise<User[]> => {
   try {
-    const response = await axios.get('https://dummyjson.com/users?limit=10');
+    const skip = Math.floor(Math.random() * 90);
+    const response = await axios.get(`https://dummyjson.com/users?limit=10&skip=${skip}`);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return response.data.users.map((user: any) => ({
       id: user.id.toString(),

@@ -24,32 +24,22 @@ export const loadUsers = createAsyncThunk(
 
     console.log('Fetching new users from API');
     const users = await fetchUserData();
-    
-    const usersWithWeather: User[] = [];
-    
-    for (let i = 0; i < users.length; i++) {
-      const user = users[i];
-      
-      try {
-        console.log(`Loading weather for ${user.name} (${i + 1}/${users.length})`);
-        
-        const weatherData = await fetchWeatherData(
-          user.coordinates.latitude,
-          user.coordinates.longitude
-        );
-        
-        usersWithWeather.push({ ...user, weather: weatherData });
-        console.log(`Weather loaded for ${user.name}`);
-      } catch (error) {
-        console.error(`Failed to load weather for ${user.name}:`, error);
-        usersWithWeather.push(user);
-      }
-      
-      if (i < users.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 300));
-      }
-    }
-    
+
+    const usersWithWeather = await Promise.all(
+      users.map(async (user) => {
+        try {
+          const weatherData = await fetchWeatherData(
+            user.coordinates.latitude,
+            user.coordinates.longitude
+          );
+          return { ...user, weather: weatherData };
+        } catch (error) {
+          console.error(`Failed to load weather for ${user.name}:`, error);
+          return user;
+        }
+      })
+    );
+
     console.log(`Loaded ${usersWithWeather.length} users, ${usersWithWeather.filter(u => u.weather).length} with weather`);
     
     localStorage.setItem('users', JSON.stringify(usersWithWeather));
