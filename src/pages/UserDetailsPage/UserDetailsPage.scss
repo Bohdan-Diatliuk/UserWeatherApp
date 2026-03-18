@@ -52,14 +52,13 @@
     &__content {
         display: flex;
         gap: 40px;
-        // border-radius: 50%;
         align-items: flex-start;
     }
 
     &__avatar {
         width: 250px;
         height: auto;
-        border-radius: 50%;
+        border-radius: 12px;
         object-fit: contain;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
